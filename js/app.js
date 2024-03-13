@@ -9,8 +9,10 @@ createGrid.addEventListener('click', function () {
     //CREARE LA GRIGLIA
     //CREARE LE CELLE
     const gridElement = document.querySelector('.grid');
+    gridElement.innerHTML = ''
     let size;
 
+    //PER OGNI DIFFICOLà GESTIRE LE CELLE PRESENTI IN MANIERA ORDINATA
     if (inputElementDom.value === 'easy') {
         size = 10;
         gridElement.classList.add('easy')
@@ -22,6 +24,8 @@ createGrid.addEventListener('click', function () {
         gridElement.classList.add('hard')
     }
     const numberOfCelles = size * size;
+
+   
 
     //LEGGERE LE CELLE SINGOLARMENTE 
     for (let i = 0; i < numberOfCelles; i++) {
@@ -43,5 +47,8 @@ createGrid.addEventListener('click', function () {
 
 
 })
+
+
+
 
 
