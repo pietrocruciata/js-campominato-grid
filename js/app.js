@@ -1,5 +1,7 @@
 //COLLEGARE IL BOTTONE PER FORMARE LA GRIGLIA
 const createGrid = document.querySelector('.button');
+//COLLEGARE LA SELECT
+const inputElementDom = document.querySelector('.input')
 
 //CREARE L'EVENTO SU QUEL BOTTONE
 createGrid.addEventListener('click', function () {
@@ -7,7 +9,18 @@ createGrid.addEventListener('click', function () {
     //CREARE LA GRIGLIA
     //CREARE LE CELLE
     const gridElement = document.querySelector('.grid');
-    const size = 10;
+    let size;
+
+    if (inputElementDom.value === 'easy') {
+        size = 10;
+        gridElement.classList.add('easy')
+    } else if (inputElementDom.value === 'medium') {
+        size = 9;
+        gridElement.classList.add('medium')
+    } else {
+        size = 7;
+        gridElement.classList.add('hard')
+    }
     const numberOfCelles = size * size;
 
     //LEGGERE LE CELLE SINGOLARMENTE 
@@ -28,4 +41,7 @@ createGrid.addEventListener('click', function () {
 
     }
 
+
 })
+
+
